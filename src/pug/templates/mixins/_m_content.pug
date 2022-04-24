@@ -1,0 +1,48 @@
+mixin content(data)
+	- content_inner = data.content_inner
+	- content_chevron = data.content_chevron
+	- text = data.text
+	- link = data.link
+	- inner_author = data.inner_author
+
+	- chapter_mod = data.chapter_mod
+	- author = data.author
+	- chapter_icon = data.chapter_icon
+	- chapter = data.chapter
+
+	- title_size  = data.title_size
+	- title = data.title
+	- descr = data.descr
+
+	- date = data.date
+	- time = data.time
+
+	
+	if content_inner
+		.content.content--inner
+			.content__wrap_inner
+				.content__chevron= content_chevron
+				h2.content__text!= text
+				.content__author= inner_author
+				.content__link_wrap
+					a.content__link= link
+						.content__link_icon
+							+icon('trangle', 'icon--size_mod')
+	else
+		.content
+			.content__chapter_wrap
+				p(class=`content__chapter content__chapter--${chapter_mod}`)= chapter
+				if chapter_icon
+					.content__chapter_icon
+						+icon('lighting', 'icon--size_mod')
+				else
+					.content__chapter_author= 'Автор: ' + author
+			.content__text_wrap
+				h2(class=`content__title content__title--${title_size}`)= title
+				if descr
+					p(class='content__descr')= descr
+			.content__date_wrap
+				.content__date= date
+				.content__time= time
+
+		

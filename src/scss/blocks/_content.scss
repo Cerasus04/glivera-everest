@@ -1,0 +1,96 @@
+
+.cover_img {
+}
+.content {
+	display: flex;
+	flex-direction: column;
+}
+.content__chapter_wrap {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-bottom: 1.1rem;
+}
+.content__chapter {
+	font-size: 1.2rem;
+	font-weight: 500;
+}
+.content__chapter--bg_blue {
+	color: $white;
+	background-color: $color-blue;
+}
+.content__chapter_author {
+	@extend %text_light;
+	min-width: 100%;
+}
+.content__chapter_icon {
+	width: 0.7rem;
+	height: 1.5rem;
+}
+.content__text_wrap {
+}
+.content__title {
+	font-weight: 500;
+}
+.content__title--s {
+	@extend %h2_s;
+}
+.content__title--s_up {
+	@extend %h2_s_up;
+}
+.content__title--m {
+	@extend %h2_m;
+}
+.content__date_wrap {
+	display: flex;
+	justify-content: space-between;
+	margin-top: auto;
+}
+.content__date {
+	@extend %text_light;
+}
+.content__time {
+	@extend %text_light;
+}
+.content__chapter--blue {
+	color: $color-blue;
+}
+.content__chapter--red {
+	color: $color-red;
+}
+.content__chapter--orange {
+	color: $color-orange;
+}
+.content__chapter--green {
+	color: $color-green;
+}
+.content__chapter--purple {
+	color: $color-purple;
+}
+.content__chapter--navy_blue {
+	color: $color-navy-blue;
+}
+.content--inner {
+}
+.content__wrap_inner {
+}
+.content__chevron {
+	font-size: 1.6rem;
+	letter-spacing: -0.04rem;
+	text-transform: uppercase;
+}
+.content__text {
+	@extend %h2_inner;
+}
+.content__author {
+}
+.content__link_wrap {
+}
+.content__link {
+}
+.content__link_icon {
+}
+.content__descr {
+	@extend %descr;
+	margin-top: 1rem;
+}
