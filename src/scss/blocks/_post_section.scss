@@ -6,7 +6,6 @@
 }
 .post__item {
 	display: flex;
-	padding: 1.4rem 1.2rem;
 	background-color: $color-light-bg;
 	outline: 2px solid red;
 }
@@ -18,13 +17,24 @@
 .post__list {
 }
 .post__item {
+	position: relative;
+	display: grid;
 }
 .post__item--xl_pic {
 	grid-column: span 3;
 	grid-row: span 2;
+
+	.post__img_wrap {
+		position: absolute;
+	}
+	.content {
+		align-self: end;
+	}
 }
 .post__img_wrap {
 	position: relative;
+	width: 100%;
+	height: 100%;
 }
 .post__img {
 	position: absolute;
@@ -34,6 +44,7 @@
 	display: block;
 
 	width: 100%;
+	height: 100%;
 }
 .post__img_in {
 	@extend %cover_img;
@@ -42,6 +53,10 @@
 }
 .post__item--hor_m_inner {
 	grid-column: span 2;
+
+	.post__img_wrap {
+		position: absolute;
+	}
 }
 .post__item--vert_m_text {
 	grid-row: span 2;
@@ -49,6 +64,7 @@
 }
 .post__item--hor_m_pic {
 	grid-column: span 2;
+	grid-template-columns: 50% 50%;
 }
 .post__item--l_text {
 	grid-column: span 2;
