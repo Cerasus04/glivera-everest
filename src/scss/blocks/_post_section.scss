@@ -29,6 +29,7 @@
 	}
 	.content {
 		align-self: end;
+		color: $white;
 	}
 }
 .post__img_wrap {
@@ -66,7 +67,26 @@
 	grid-column: span 2;
 	grid-template-columns: 50% 50%;
 }
+.post__item--vert_m_pic {
+	grid-row: span 2;
+	grid-template-rows: 50% 50%;
+}
 .post__item--l_text {
 	grid-column: span 2;
 	grid-row: span 2;
+}
+.post__item--l_pic {
+	grid-column: span 2;
+	grid-row: span 2;
+
+	.post__img_wrap {
+		position: absolute;
+	}
+	.content {
+		align-self: end;
+		color: $white;
+	}
+}
+.post__item--hor_m_text {
+	grid-column: span 2;
 }

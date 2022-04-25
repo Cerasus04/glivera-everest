@@ -30,6 +30,7 @@
 }
 .content__title {
 	font-weight: 500;
+	color: inherit;
 }
 .content__title--s {
 	@extend %h2_s;
@@ -128,4 +129,5 @@
 .content__descr {
 	@extend %descr;
 	margin-top: 1rem;
+	color: inherit;
 }
