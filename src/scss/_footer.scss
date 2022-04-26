@@ -6,4 +6,15 @@
 	font-size: 1rem;
 
 	will-change: transform;
+	background-color: $color-bg;
+}
+.footer__in {
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	column-gap: 5.7rem;
+	align-content: start;
+	
+	max-width: 144rem;
+	margin: 0 auto;
+	padding: 2.5rem 14.5rem;
 }

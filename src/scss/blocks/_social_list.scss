@@ -1,0 +1,19 @@
+.social_list {
+	display: flex;
+	flex-wrap: wrap;
+
+	margin: 0 -2rem -2rem 0;
+
+}
+.social_list__item {
+	width: 2rem;
+	height: 2rem;
+
+	padding: 0 3rem 2rem 0;
+
+	box-sizing: content-box;
+}
+.social_list__link {
+	position: relative;
+	color: $color-light;
+}

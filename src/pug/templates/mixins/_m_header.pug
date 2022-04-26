@@ -1,2 +1,43 @@
 mixin header
 	header.header
+		.header__in
+			.header__wrap
+				.header__logo
+					+logo({
+						img : 'logo',
+						type : 'png',
+						href : '#',
+						label : 'logo',
+						altText : 'logo'
+					})
+				nav.nav.header__menu_wrap
+					+menu({
+						gl_class: 'nav',
+						gl_mod : 'header',
+						items: [
+							{title : 'О нас'},
+							{title : 'Решения'},
+							{title : 'Аналитика'},
+							{title : 'Партнеры'},
+							{title : 'Контакты'},
+							{title : ' Подписка'},
+						]
+					})
+					+social({
+						mod_block: 'social_list--header',
+						items: [
+							{name_icon: 'fb', mod_icon: 'icon--size_mod'},
+							{name_icon: 'tw', mod_icon: 'icon--size_mod'},
+							{name_icon: 'rss', mod_icon: 'icon--size_mod'},
+							{name_icon: 'youtube', mod_icon: 'icon--size_mod'}
+						]
+					})
+					.header__search
+						+icon('search', 'icon--size_mod')
+					.header__language
+						ul.header__language_list
+							li.header__language_item
+								a.header__language(href='#')= 'ua'
+							li.header__language_item
+								a.header__language(href='#')= 'ru'
+							

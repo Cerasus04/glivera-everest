@@ -1,2 +1,65 @@
 mixin footer
 	footer.footer
+		.footer__in
+			.footer__wrap
+				.footer__logo
+					+logo({
+						img : 'logo_footer',
+						type : 'png',
+						href : '#',
+						label : 'logo',
+						altText : 'logo'
+					})
+				.footer__social
+					p.footer__social_text Платформа AI
+					+social({
+						mod_block: 'social_list--footer',
+						items: [
+							{name_icon: 'fb', mod_icon: 'icon--size_mod'},
+							{name_icon: 'tw', mod_icon: 'icon--size_mod'},
+							{name_icon: 'rss', mod_icon: 'icon--size_mod'},
+							{name_icon: 'youtube', mod_icon: 'icon--size_mod'}
+						]
+					})
+			.footer__about.about_list
+				.about_list__title Кто мы
+				+menu({
+						gl_class: 'about_list',
+						items: [
+							{title : 'Что мы делаем'},
+							{title : 'Направления работы'},
+							{title : 'Компетенции'},
+							{title : 'Команда'},
+							{title : 'Новости'},
+							{title : ' Партнеры'},
+							{title: 'Контакты'}
+						]
+					})
+			.footer__solutions.solutions_list
+				.solutions_list__title Аналитика
+				.solution_list__text Решения: 
+				+menu({
+						gl_class: 'solutions_list',
+						items: [
+							{title : 'Банки'},
+							{title : 'Страхование'},
+							{title : 'Здравоохранение'},
+							{title : 'Транспорт и логистика'},
+							{title : 'Госудерственный сектор'},
+							{title : 'Ритейл и eCommerce'},
+							{title: 'Телекомуникации'}
+						]
+				})
+			.footer__contact.contact
+				.contact__title О нас
+				- list = [{text: 'EVEREST - опытный интегратор digital-технологий, продуктов и сервисов для цифровой трансформации бизнеса, корпоративного и государственного секторов.'},{text: 'Разрабатывает и внедряет решения на базе AI, используя методы Data Data и ML для совершенствования и автоматизации бизнес-процессов клиентов.'},{text: 'Всегда оперирует тенденциями цифрового мира и концентрирует свои усилия на уникальности и инновационности методов в работе с каждым клиентом над созданием и адаптацией digital-идей и концепций.'}]
+				each item in list
+					p.contact__text= item.text
+				.contact__feadback
+					.contact__feadback_text Будьте в курсе лучших digital-решений для вашего бизнеса
+					+form_input({
+						label: 'Введите email',
+						id: 'email',
+						placeholder: 'E-mail',
+						required: true
+					})

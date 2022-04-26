@@ -40,7 +40,7 @@ mixin form_input(data)
 		if data.label
 			label(for=data.id class= labelClass)= data.label
 		div(class = fieldClass)
-			input(type=data.type class = elClass placeholder=data.placeholder value=data.value name=data.name required=data.required)
+			input(type=data.type id=data.id class = elClass placeholder=data.placeholder value=data.value name=data.name required=data.required)
 			block
 
 mixin form_textarea(data)
@@ -109,11 +109,11 @@ mixin breadcrumbs(array,add_class)
 //- works
 mixin menu(menuArray)
 	- gl_mod = menuArray.gl_mod || ''
-	ul(class=`${menuArray.gl_class}__list `)
+	ul(class=`${menuArray.gl_class}__list${gl_mod ? ` ${menuArray.gl_class}__list--${gl_mod}` : ''}`)
 		each item in menuArray.items
 			- url = item.url || '#'
-			li(class= `${menuArray.gl_class}__item ${item.active ? `${menuArray.gl_class}__item--active_mod` : ''} ${gl_mod ? `${menuArray.gl_class}__item--${gl_mod}` : ''}`)
-				a(href= url class= `${menuArray.gl_class}__link ${gl_mod ? `${menuArray.gl_class}__link--${gl_mod}` : ''}`)= item.title
+			li(class= `${menuArray.gl_class}__item${item.active ? `${menuArray.gl_class}__item--active_mod` : ''}`)
+				a(href= url class= `${menuArray.gl_class}__link`)= item.title
 
 //- works
 mixin social(socialArray)
@@ -121,8 +121,8 @@ mixin social(socialArray)
 	ul.social_list(class= `${mod_block}`)
 		each item in socialArray.items
 			- mod_link = item.mod_link || ''
-			li.social_item
-				a.social_link(href="#" class= `${mod_link}`)
+			li.social_list__item
+				a.social_list__link(href="#" class= `${mod_link}`)
 					+icon(item.name_icon, item.mod_icon)
 
 //- works
@@ -182,3 +182,22 @@ mixin picture(data)
 					source(srcset=`${assetsImage}${data.img}.${imgType}${is2x ? `, ${data.img}@2x.${imgType} 2x` : ''}` type=`image/${imgType}`)
 		img(class= customClass src=`${assetsImage}${data.img}.${type}` alt="")
 
+mixin logo(data)
+	- img = data.img;
+	- type = data.type;
+	- href = data.href;
+	- label = data.label;
+	- altText = data.altText;
+
+	a(class='logo' href=href aria-label=label)&attributes(attributes)
+		img(src=`${assetsImage}${img}.${type}` alt=altText)
+
+mixin button(data)
+	- size = data.size || 'normal';
+	- theme = data.theme || 'primary';
+	- type = data.type || 'button';
+	- text = data.text || ''
+	- ariaLabel = data.ariaLabel;
+
+	button(class=`btn btn--${size} btn--${theme}` aria-label=ariaLabel type=type)&attributes(attributes)= text
+		block

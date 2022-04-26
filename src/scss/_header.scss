@@ -15,3 +15,53 @@
 }
 
 //------------------------------------------------------------layout###
+.header__in {
+	max-width: 144rem;
+	margin: 0 auto;
+	padding: 2.5rem 14.5rem;
+}
+.header__wrap {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.header__menu_wrap {
+	display: flex;
+	justify-content: space-between;
+	width: 75%;
+}
+.header__search {
+	width: 2rem;
+	height: 2rem;
+	color: $color-main;
+}
+.header__language_list {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 -2rem -2rem 0;
+	
+}
+.header__language_item {
+	position: relative;
+	padding: 0 2rem 2rem 0;
+
+	&:first-child::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 1rem;
+		height: 1.8rem;
+		width: 1px;
+		background-color: $color-light;
+	}
+}
+.header__language {
+	font-size: 1.2rem;
+	text-transform: uppercase;
+	color: $color-main;
+
+	&:hover {
+		text-transform: none;
+		color: $color-main;
+	}	
+}
