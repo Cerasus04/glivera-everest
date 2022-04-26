@@ -38,7 +38,6 @@
 	display: grid;
 
 	background-color: $color-light-bg;
-	outline: 2px solid red;
 
 	@include bp($point_4 - 1) {
 		margin-bottom: 3rem;
@@ -53,6 +52,13 @@
 		align-self: end;
 		color: $white;
 	}
+	.content__chapter_author {
+		color: $white;
+	}
+	.content__date,
+	.content__time {
+		color: $white;
+	} 
 	@include bp($page_width, min) {
 		grid-row: span 2;
 		grid-column: span 3;
@@ -92,10 +98,13 @@
 	}
 }
 .post__item--vert_m_text {
-	grid-row: span 2;
 
-	@include bp($point_4, min) {
+	@include bp($point_2, min) {
 		min-height: 45.8rem;
+		grid-row: span 2;
+	}
+	@media (min-width: $point_4) and (max-width: $point_2 - 1) {
+		grid-row: span 1;
 	}
 }
 .post__item--hor_m_pic {
@@ -112,7 +121,11 @@
 }
 .post__item--l_text {
 	grid-column: span 2;
-	grid-row: span 2;
+
+	@include bp($point_2, min) {
+		grid-row: span 2;
+
+	}
 }
 .post__item--l_pic {
 	grid-column: span 2;
@@ -123,6 +136,14 @@
 	}
 	.content {
 		align-self: end;
+		color: $white;
+	}
+	.content__chapter_author {
+		min-width: unset;
+	}
+	.content__date,
+	.content__chapter_author,
+	.content__time {
 		color: $white;
 	}
 	@media (min-width: $point_4) and (max-width: $page_width - 1) {

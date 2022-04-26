@@ -15,6 +15,8 @@
 	font-weight: 500;
 }
 .content__chapter--bg_blue {
+	padding: 0 2rem;
+	margin-bottom: 1rem;
 	color: $white;
 	background-color: $color-blue;
 }
@@ -29,6 +31,8 @@
 .content__text_wrap {
 }
 .content__title {
+	@include word-break;
+
 	font-weight: 500;
 	color: inherit;
 }
@@ -49,6 +53,10 @@
 	display: flex;
 	justify-content: space-between;
 	margin-top: auto;
+
+	@include bp($point_4 - 1) {
+		padding-top: 2rem;
+	}
 }
 .content__date {
 	@extend %text_light;
@@ -86,14 +94,15 @@
 	flex-direction: column;
 	margin-left: auto;
 	align-items: center;
+	justify-content: space-between;
 
 	@include bp($page_width, min) {
 		width: 50%;
 	}	
 	@media (min-width: $point_4) and (max-width: $page_width - 1) {
 		width: 77%;
-	}
-	
+		height: 100%;
+	}	
 }
 .content__chevron {
 	align-self: flex-end;
@@ -109,6 +118,8 @@
 }
 .content__text {
 	@extend %h2_inner;
+	@include word-break;
+
 	text-align: center;
 	margin-bottom: 1rem;
 
@@ -146,6 +157,8 @@
 }
 .content__descr {
 	@extend %descr;
+	@include word-break;
+
 	margin-top: 1rem;
 	color: inherit;
 }
