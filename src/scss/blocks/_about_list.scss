@@ -1,0 +1,18 @@
+.about_list {
+}
+.about_list__list {
+}
+.about_list__item {
+}
+.about_list__link {
+	font-size: 1.4rem;
+	line-height: 2.7rem;
+	color: $white;
+	text-transform: uppercase;
+	transition: .3s ease;
+
+	&:hover {
+		color: $color-light;
+		text-decoration: none;
+	}
+}

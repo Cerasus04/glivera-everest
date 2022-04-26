@@ -13,4 +13,10 @@
 	font-size: 1.2rem;
 	text-transform: uppercase;
 	color: inherit;
+	transition: .3s ease;
+
+	&:hover {
+		text-decoration: none;
+		color: $color-main;
+	}
 }

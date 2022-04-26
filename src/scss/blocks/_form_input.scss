@@ -1,0 +1,21 @@
+.form_input {
+}
+.form_input__label {
+	position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+.form_input__field {
+	width: 23rem;
+}
+.form_input__element {
+	background-color: rgba(255, 255, 255, 0.37);
+
+	&::placeholder {
+		color: $white;
+	}
+}

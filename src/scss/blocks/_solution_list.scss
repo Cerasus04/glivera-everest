@@ -1,0 +1,17 @@
+.solutions_list {
+}
+.solutions_list__list {
+}
+.solutions_list__item {
+}
+.solutions_list__link {
+	font-size: 1.2rem;
+	line-height: 2.7rem;
+	color: $white;
+	transition: .3s ease;
+	
+	&:hover {
+		text-decoration: none;
+		color: $color-light;
+	}
+}

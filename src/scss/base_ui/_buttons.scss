@@ -2,3 +2,21 @@
 // 	@extend %blue_btn_1;
 // 	@extend %btn_size_1;
 // }
+.btn {
+	background-color: transparent;
+	transition: background-color .3s ease;
+	color: $white;
+
+	&:hover {
+		background-color: $color-light;
+	}
+}
+.btn--normal {
+	padding: 0 3.3rem;
+	font-size: 1.4rem;
+	font-weight: 500;
+	border: 1px solid $white;
+	text-transform: uppercase;
+}
+.btn--primary {
+}

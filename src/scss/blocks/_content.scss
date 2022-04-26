@@ -117,6 +117,12 @@
 .content__link {
 	display: flex;
 	color: $white;
+	transition: .3s ease;
+
+	&:hover {
+		color: $color-light;
+		text-decoration: none;
+	}
 }
 .content__link_icon {
 	width: 1.7rem;
