@@ -18,7 +18,7 @@ console.info('%c%s', styles, message);
 
 // -------------------  dev widget
 if (GLOBAL_VARS.projectDevStatus) {
-	pageWidgetInit();
+	// pageWidgetInit();
 	console.log(process.env.NODE_ENV);
 }
 // -------------------  dev widget###

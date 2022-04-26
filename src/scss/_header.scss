@@ -34,12 +34,17 @@
 	width: 2rem;
 	height: 2rem;
 	color: $color-light;
+	cursor: pointer;
+
+	&:hover,
+	&:focus {
+		color: $color-bg;
+	}
 }
 .header__language_list {
 	display: flex;
 	justify-content: space-between;
-	margin: 0 -2rem -2rem 0;
-	
+	margin: 0 -2rem -2rem 0;	
 }
 .header__language_item {
 	position: relative;
@@ -60,8 +65,9 @@
 	text-transform: uppercase;
 	color: $color-main;
 
-	&:hover {
-		text-transform: none;
-		color: $color-main;
+	&:hover,
+	&:focus {
+		text-decoration: none;
+		color: $color-bg;
 	}	
 }

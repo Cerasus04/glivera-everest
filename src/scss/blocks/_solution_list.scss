@@ -10,7 +10,8 @@
 	color: $white;
 	transition: .3s ease;
 	
-	&:hover {
+	&:hover,
+	&:focus {
 		text-decoration: none;
 		color: $color-light;
 	}

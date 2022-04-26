@@ -23,7 +23,8 @@
 
 	@include st_btn();
 
-	&:hover {
+	&:hover,
+	&:focus {
 		background-color: darken($color_link_base, 10%);
 	}
 

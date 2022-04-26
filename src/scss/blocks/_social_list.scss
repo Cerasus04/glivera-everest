@@ -18,13 +18,20 @@
 	color: $color-light;
 	transition: .3s ease;
 
-	&:hover {
+	&:hover,
+	&:focus {
 		text-decoration: none;
-		color: $color-main;
+		color: $color-bg;
 	}
 }
 .social_list--footer {
 	.social_list__link {
 		color: $white;
+
+		&:hover,
+		&:focus {
+			text-decoration: none;
+			color: $color-light;
+		}
 	}
 }

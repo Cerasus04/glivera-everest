@@ -11,7 +11,8 @@
 	text-transform: uppercase;
 	transition: .3s ease;
 
-	&:hover {
+	&:hover,
+	&:focus {
 		color: $color-light;
 		text-decoration: none;
 	}

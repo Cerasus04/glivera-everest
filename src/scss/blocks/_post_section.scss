@@ -1,29 +1,50 @@
-.post__list {
-	display: grid;
-  grid-template-columns: 	repeat(5, 1fr);
-	grid-template-rows: repeat(12, 25rem);
-  grid-gap: 2rem;
-	grid-auto-flow: dense;
-}
-.post__item {
-	display: flex;
-	background-color: $color-light-bg;
-	outline: 2px solid red;
-}
 .post {
+	@include bp($page_width, min) {
+		padding: 0 14.5rem;
+	}
+
+	@media (min-width: $point_1) and (max-width: $page_width) {
+		padding: 0 10rem;
+	}
+
+	@include bp($point_1 - 1) {
+		padding: 0 3rem;
+	}
 }
+
 .post__in {
-	padding: 0 14.5rem 7.4rem;
+	padding-bottom: 7.4rem;
 }
+
 .post__list {
+		display: grid;
+		grid-gap: 2rem;
+		grid-auto-flow: dense;
+		grid-auto-rows: 27rem;
+			
+	@include bp($point_2, min) {
+		grid-template-columns: repeat(5, 1fr);
+	}
+
+	@media (min-width: $point_4) and (max-width: $point_2 - 1) {
+		grid-template-columns: repeat(2, 1fr);	
+	}
+	@include bp($point_4 - 1) {
+		display: block;
+	}		
 }
 .post__item {
 	position: relative;
 	display: grid;
+
+	background-color: $color-light-bg;
+	outline: 2px solid red;
+
+	@include bp($point_4 - 1) {
+		margin-bottom: 3rem;
+	}
 }
 .post__item--xl_pic {
-	grid-column: span 3;
-	grid-row: span 2;
 
 	.post__img_wrap {
 		position: absolute;
@@ -32,7 +53,17 @@
 		align-self: end;
 		color: $white;
 	}
+	@include bp($page_width, min) {
+		grid-row: span 2;
+		grid-column: span 3;
+	}
+	@media (min-width: $point_4) and (max-width: $page_width - 1) {
+		grid-column: span 2;
+		grid-row: span 1;
+	}
+
 }
+
 .post__img_wrap {
 	position: relative;
 	width: 100%;
@@ -62,15 +93,22 @@
 }
 .post__item--vert_m_text {
 	grid-row: span 2;
-	min-height: 45.8rem;
+
+	@include bp($point_4, min) {
+		min-height: 45.8rem;
+	}
 }
 .post__item--hor_m_pic {
-	grid-column: span 2;
-	grid-template-columns: 50% 50%;
+	@include bp($point_4, min) {
+		grid-column: span 2;
+		grid-template-columns: 50% 50%;
+	}
 }
 .post__item--vert_m_pic {
-	grid-row: span 2;
-	grid-template-rows: 50% 50%;
+	@include bp($point_4, min) {
+		grid-row: span 2;
+		grid-template-rows: 50% 50%;
+	}
 }
 .post__item--l_text {
 	grid-column: span 2;
@@ -86,6 +124,9 @@
 	.content {
 		align-self: end;
 		color: $white;
+	}
+	@media (min-width: $point_4) and (max-width: $page_width - 1) {
+		grid-row: span 1;
 	}
 }
 .post__item--hor_m_text {

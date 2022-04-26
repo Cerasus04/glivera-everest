@@ -15,8 +15,9 @@
 	color: inherit;
 	transition: .3s ease;
 
-	&:hover {
+	&:hover,
+	&:focus {
 		text-decoration: none;
-		color: $color-main;
+		color: $color-bg;
 	}
 }
