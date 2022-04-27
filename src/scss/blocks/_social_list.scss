@@ -1,9 +1,10 @@
 .social_list {
 	display: flex;
-	flex-wrap: wrap;
-
+		flex-wrap: wrap;
 	margin: 0 -2rem -2rem 0;
-
+	@include bp($point_1, min) {
+		
+	}
 }
 .social_list__item {
 	width: 2rem;
@@ -15,13 +16,18 @@
 }
 .social_list__link {
 	position: relative;
-	color: $color-light;
 	transition: .3s ease;
 
 	&:hover,
 	&:focus {
 		text-decoration: none;
 		color: $color-bg;
+	}
+	@include bp($point_1, min) {
+		color: $color-light;
+	}
+	@include bp($point_1 - 1) {
+		color: $white;
 	}
 }
 .social_list--footer {

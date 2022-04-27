@@ -3,6 +3,7 @@ import $ from 'jquery';
 import { GLOBAL_VARS } from 'utils/constants';
 import { documentReady, pageLoad } from 'utils';
 import pageWidgetInit from './dev_vendors/dev_widget';
+
 // ------------------- imports###
 
 // ------------------  import components
