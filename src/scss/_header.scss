@@ -12,27 +12,41 @@
 	will-change: transform;
 
 	@include z-index(header);
+
+	@include bp($page_width, min) {
+		padding: 2.5rem 14.5rem;
+		background-color: $white;
+	}
+
+	@media (min-width: $point_1) and (max-width: $page_width) {
+		padding: 2rem 10rem;
+	}
+
+	@include bp($point_1 - 1) {
+		padding: 2rem 3rem;
+	}
 }
 
 //------------------------------------------------------------layout###
 .header__in {
 	max-width: 144rem;
 	margin: 0 auto;
-	padding: 2.5rem 14.5rem;
 }
+
 .header__wrap {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+	@extend %global_flex_block_row_wrap_space_between_center;
 }
+
 .header__menu_wrap {
-	display: flex;
-	justify-content: space-between;
+	@extend %global_flex_block_row_wrap_space_between;
+	
 	width: 75%;
 }
+
 .header__search {
 	width: 2rem;
 	height: 2rem;
+
 	color: $color-light;
 	cursor: pointer;
 
@@ -41,11 +55,13 @@
 		color: $color-bg;
 	}
 }
+
 .header__language_list {
-	display: flex;
-	justify-content: space-between;
+	@extend %global_flex_block_row_wrap_space_between;
+
 	margin: 0 -2rem -2rem 0;	
 }
+
 .header__language_item {
 	position: relative;
 	padding: 0 2rem 2rem 0;
@@ -60,6 +76,7 @@
 		background-color: $color-light;
 	}
 }
+
 .header__language {
 	font-size: 1.2rem;
 	text-transform: uppercase;

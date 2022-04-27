@@ -7,22 +7,47 @@
 
 	will-change: transform;
 	background-color: $color-bg;
+
+	@include bp($page_width, min) {
+		padding: 2.5rem 14.5rem 7rem;
+	}
+
+	@media (min-width: $point_1) and (max-width: $page_width) {
+		padding: 2rem 10rem;
+	}
+
+	@include bp($point_1 - 1) {
+		padding: 2rem 3rem;
+	}
 }
 .footer__in {
 	display: grid;
-	grid-template-columns: auto auto auto 38%;
-	column-gap: 5.7rem;
 	align-content: start;
 
 	max-width: 144rem;
 	margin: 0 auto;
-	padding: 2.5rem 14.5rem 7rem;
+
+	@include bp($point_1, min) {
+		grid-template-columns: auto auto auto 38%;
+		column-gap: 5.7rem;
+	}
+	@media (min-width: $point_4) and (max-width: $point_1 - 1) {
+		grid-template-columns: auto auto auto;
+		column-gap: 4rem;	
+	}
+	@include bp($point_4 - 1) {
+		grid-template-columns: 1fr 1fr;
+		column-gap: 3rem;
+	}
 }
 .footer__wrap {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+	@extend %global_flex_block_column_wrap_space_between;
+
 	margin-bottom: 4rem;
+
+	@include bp($point_4 - 1) {
+		// grid-template-columns: 1fr 1fr;
+	}
 }
 .footer__logo {
 }
@@ -42,12 +67,24 @@
 	padding-bottom: 0;
 }
 .footer__about {
+	@include bp($point_4 - 1) {
+		grid-column: 1 / 2;
+	}
 }
 
 .footer__solutions {
+	@include bp($point_4 - 1) {
+		grid-column: 2 / 3;
+	}
 }
 
 .footer__contact {
+	@media (min-width: $point_4) and (max-width: $point_1 - 1) {
+		grid-column: span 3;
+	}
+	@include bp($point_4 - 1) {
+		grid-column: span 2;
+	}
 }
 .footer__wrap_bottom {
 	

@@ -1,5 +1,13 @@
 .form_input {
+	@include bp($point_1, min) {
+		width: 48%;
+	}
+	@include bp($point_1 - 1) {
+		width: 32rem;
+		margin: 0 2rem 1rem 0;
+	}
 }
+
 .form_input__label {
 	position: absolute;
   clip: rect(1px, 1px, 1px, 1px);
@@ -9,13 +17,21 @@
   width: 1px;
   overflow: hidden;
 }
+
 .form_input__field {
-	width: 23rem;
+	border-color: $white;
+
+	&:focus {
+		border-color: $white;
+	}
 }
+
 .form_input__element {
+	color: $white;
+
 	background-color: rgba(255, 255, 255, 0.37);
 
 	&::placeholder {
 		color: $white;
-	}
+	}	
 }
